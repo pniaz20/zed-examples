@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\include\GLViewer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\include\ZEDModel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0E0F7B9D-DA5F-3686-A913-2D180EC50B11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B5617E11-7D17-3C28-9D7B-5AB83E612298}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

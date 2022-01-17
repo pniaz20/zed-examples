@@ -64,8 +64,14 @@ int main(int argc, char **argv) {
 
     RuntimeParameters runParameters;
     // Setting the depth confidence parameters
-    runParameters.confidence_threshold = 50;
+    // Original values:
+    //runParameters.confidence_threshold = 50;
+    //runParameters.texture_confidence_threshold = 100;
+    // New values:
+    runParameters.confidence_threshold = 100;
     runParameters.texture_confidence_threshold = 100;
+    // The higher the threshold, the more content is displayed (less sparse), and more CPU/GPU memory is consumed.
+
 
     // Allocation of 4 channels of float on GPU
     Mat point_cloud(camera_config.resolution, MAT_TYPE::F32_C4, MEM::GPU);

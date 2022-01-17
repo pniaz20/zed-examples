@@ -1,0 +1,10 @@
+^C:\USERS\POUYA\DOWNLOADS\COMPRESSED\ZED_EXAMPLES_BERKSMODIFICATION\ZED-EXAMPLES-MASTER\SPATIAL MAPPING\ADVANCED POINT CLOUD MAPPING\CPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp" "-BC:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp/build" --check-stamp-file "C:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^D:\REPO\ZED-EXAMPLES\SPATIAL MAPPING\BASIC\CPP\BUILD\CMAKEFILES\CE7AAC485598B63D20ECD5ECB725F3C5\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/REPO/zed-examples/spatial mapping/basic/cpp" "-BD:/REPO/zed-examples/spatial mapping/basic/cpp/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/REPO/zed-examples/spatial mapping/basic/cpp/build/ZED_Spatial_Mapping.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

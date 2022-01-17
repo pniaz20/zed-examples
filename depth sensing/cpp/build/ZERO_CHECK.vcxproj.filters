@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\REPO\zed-examples\depth sensing\cpp\build\CMakeFiles\fe585813996dd78a2efb86d686f87a30\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{31CF19EA-338F-35ED-B838-188C29E49CE0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
