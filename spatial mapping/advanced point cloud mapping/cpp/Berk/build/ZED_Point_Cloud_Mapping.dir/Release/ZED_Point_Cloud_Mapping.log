@@ -1,38 +1,5 @@
-﻿  Building Custom Rule C:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp/CMakeLists.txt
-cl : command line warning D9002: ignoring unknown option '-std=c++14'
+﻿cl : command line warning D9002: ignoring unknown option '-std=c++14'
 cl : command line warning D9002: ignoring unknown option '-O3'
-  GLViewer.cpp
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(5990,16): warning C4251: 'sl::InitParameters::sdk_verbose_log_file': class 'sl::String' needs to have dll-interface to be used by clients of struct 'sl::InitParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(145): message : see declaration of 'sl::String'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6042,19): warning C4251: 'sl::InitParameters::input': class 'sl::InputType' needs to have dll-interface to be used by clients of struct 'sl::InitParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(640): message : see declaration of 'sl::InputType'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6057,16): warning C4251: 'sl::InitParameters::optional_settings_path': class 'sl::String' needs to have dll-interface to be used by clients of struct 'sl::InitParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(145): message : see declaration of 'sl::String'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6066,16): warning C4251: 'sl::InitParameters::optional_opencv_calibration_file': class 'sl::String' needs to have dll-interface to be used by clients of struct 'sl::InitParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(145): message : see declaration of 'sl::String'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6262,19): warning C4251: 'sl::PositionalTrackingParameters::initial_world_transform': class 'sl::Transform' needs to have dll-interface to be used by clients of struct 'sl::PositionalTrackingParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(2967): message : see declaration of 'sl::Transform'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6299,16): warning C4251: 'sl::PositionalTrackingParameters::area_file_path': class 'sl::String' needs to have dll-interface to be used by clients of struct 'sl::PositionalTrackingParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(145): message : see declaration of 'sl::String'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6463,31): warning C4251: 'sl::SpatialMappingParameters::allowed_resolution': struct 'std::pair<float,float>' needs to have dll-interface to be used by clients of struct 'sl::SpatialMappingParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6356): message : see declaration of 'std::pair<float,float>'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6478,31): warning C4251: 'sl::SpatialMappingParameters::allowed_range': struct 'std::pair<float,float>' needs to have dll-interface to be used by clients of struct 'sl::SpatialMappingParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6356): message : see declaration of 'std::pair<float,float>'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6630,16): warning C4251: 'sl::RecordingParameters::video_filename': class 'sl::String' needs to have dll-interface to be used by clients of struct 'sl::RecordingParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(145): message : see declaration of 'sl::String'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6814,35): warning C4251: 'sl::ObjectDetectionRuntimeParameters::object_class_filter': class 'std::vector<sl::OBJECT_CLASS,std::allocator<sl::OBJECT_CLASS>>' needs to have dll-interface to be used by clients of struct 'sl::ObjectDetectionRuntimeParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6814): message : see declaration of 'std::vector<sl::OBJECT_CLASS,std::allocator<sl::OBJECT_CLASS>>'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6820,39): warning C4251: 'sl::ObjectDetectionRuntimeParameters::object_class_detection_confidence_threshold': class 'std::map<sl::OBJECT_CLASS,float,std::less<sl::OBJECT_CLASS>,std::allocator<std::pair<const sl::OBJECT_CLASS,float>>>' needs to have dll-interface to be used by clients of struct 'sl::ObjectDetectionRuntimeParameters'
-C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6820): message : see declaration of 'std::map<sl::OBJECT_CLASS,float,std::less<sl::OBJECT_CLASS>,std::allocator<std::pair<const sl::OBJECT_CLASS,float>>>'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\include\ZEDModel.hpp(66,5): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\include\ZEDModel.hpp(1201,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(75,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(77,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(77,33): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(218,46): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(218,46): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(221,29): warning C4244: 'initializing': conversion from 'float' to 'size_t', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp(289,21): warning C4930: 'std::string positional_tracking_state_str(void)': prototyped function not called (was a variable definition intended?)
   main.cpp
 C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(5990,16): warning C4251: 'sl::InitParameters::sdk_verbose_log_file': class 'sl::String' needs to have dll-interface to be used by clients of struct 'sl::InitParameters'
 C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(145): message : see declaration of 'sl::String'
@@ -56,12 +23,12 @@ C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6814,35): warning C4251: 's
 C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6814): message : see declaration of 'std::vector<sl::OBJECT_CLASS,std::allocator<sl::OBJECT_CLASS>>'
 C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6820,39): warning C4251: 'sl::ObjectDetectionRuntimeParameters::object_class_detection_confidence_threshold': class 'std::map<sl::OBJECT_CLASS,float,std::less<sl::OBJECT_CLASS>,std::allocator<std::pair<const sl::OBJECT_CLASS,float>>>' needs to have dll-interface to be used by clients of struct 'sl::ObjectDetectionRuntimeParameters'
 C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6820): message : see declaration of 'std::map<sl::OBJECT_CLASS,float,std::less<sl::OBJECT_CLASS>,std::allocator<std::pair<const sl::OBJECT_CLASS,float>>>'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\include\ZEDModel.hpp(66,5): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\include\ZEDModel.hpp(1201,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp(49,39): warning C4553: '==': result of expression not used; did you intend '='?
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp(89,58): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp(113,119): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp(172,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp(178,19): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Generating Code...
-  ZED_Point_Cloud_Mapping.vcxproj -> C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\build\Release\ZED_Point_Cloud_Mapping.exe
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\include\ZEDModel.hpp(66,5): warning C4305: 'initializing': truncation from 'double' to 'const float'
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\include\ZEDModel.hpp(1201,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(49,39): warning C4553: '==': result of expression not used; did you intend '='?
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(53,51): warning C4305: '=': truncation from 'double' to 'float'
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(102,58): warning C4305: '=': truncation from 'double' to 'float'
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(122,119): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(181,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(187,19): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  ZED_Point_Cloud_Mapping.vcxproj -> D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\build\Release\ZED_Point_Cloud_Mapping.exe

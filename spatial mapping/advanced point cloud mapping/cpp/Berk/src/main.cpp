@@ -30,7 +30,7 @@
 #include "GLViewer.hpp"
 
 #include <opencv2/opencv.hpp>
-
+#include <iostream>
 // Using std and sl namespaces
 using namespace std;
 using namespace sl;
@@ -41,16 +41,24 @@ void print(std::string msg_prefix, sl::ERROR_CODE err_code = sl::ERROR_CODE::SUC
 
 int main(int argc, char **argv) {
     Camera zed;
-    // Set configuration parameters for the ZED
+
+    // Set configuration parameters for the ZED Camera
     InitParameters init_parameters;
     init_parameters.depth_mode = DEPTH_MODE::ULTRA;    
     init_parameters.coordinate_system = COORDINATE_SYSTEM::RIGHT_HANDED_Y_UP; // OpenGL's coordinate system is right_handed    
-    parse_args(argc, argv, init_parameters);
     init_parameters.camera_resolution == RESOLUTION::HD2K;
+    init_parameters.camera_fps = 30;
+    init_parameters.sdk_verbose = true; // Enable verbose logging
+    init_parameters.coordinate_units = UNIT::MILLIMETER;
+    init_parameters.depth_minimum_distance = 100;    // unit same as coordinate_units
+    init_parameters.depth_maximum_distance = 10000;  // unit same as coordinate_units
+    parse_args(argc, argv, init_parameters);
+
+
+
 
     // Open the camera
     auto returned_state = zed.open(init_parameters);
-
     if (returned_state != ERROR_CODE::SUCCESS) {// Quit if an error occurred
         print("Open Camera", returned_state, "\nExit program.");
         zed.close();
@@ -68,6 +76,7 @@ int main(int argc, char **argv) {
     if (errgl!=GLEW_OK)
         print("Error OpenGL: "+std::string((char*)glewGetErrorString(errgl)));
 
+
     // Setup and start positional tracking
     Pose pose;
     POSITIONAL_TRACKING_STATE tracking_state = POSITIONAL_TRACKING_STATE::OK;
@@ -82,18 +91,18 @@ int main(int argc, char **argv) {
 
     // Set spatial mapping parameters
     SpatialMappingParameters spatial_mapping_parameters;
-    // Request a Point Cloud
     spatial_mapping_parameters.map_type = SpatialMappingParameters::SPATIAL_MAP_TYPE::FUSED_POINT_CLOUD;
-    // Set mapping range, it will set the resolution accordingly (a higher range, a lower resolution)
     spatial_mapping_parameters.set(SpatialMappingParameters::MAPPING_RANGE::SHORT);
-    spatial_mapping_parameters.resolution_meter = 0.00001;
-    spatial_mapping_parameters.range_meter = 1;
-    //spatial_mapping_parameters.resolution_meter = SpatialMappingParameters::get(SpatialMappingParameters::MAPPING_RESOLUTION::HIGH);
-    //spatial_mapping_parameters.save_texture = true;
-    // Request partial updates only (only the lastest updated chunks need to be re-draw)
-    spatial_mapping_parameters.use_chunk_only = true;
-    // Start the spatial mapping
-    zed.enableSpatialMapping(spatial_mapping_parameters);
+    spatial_mapping_parameters.set(SpatialMappingParameters::MAPPING_RESOLUTION::HIGH);
+    cout << endl;
+    cout << "min allowed range: " << spatial_mapping_parameters.allowed_range.first << endl;
+    cout << "max allowed range: " << spatial_mapping_parameters.allowed_range.second << endl;
+    cout << "min allowed resolution: " << spatial_mapping_parameters.allowed_resolution.first << endl;
+    cout << "max allowed resolution: " << spatial_mapping_parameters.allowed_resolution.second << endl;
+    spatial_mapping_parameters.resolution_meter = 0.00001; // Minimum is 1 cm
+    spatial_mapping_parameters.range_meter = 0.5; // Minimum is 2m
+    spatial_mapping_parameters.use_chunk_only = true; // Request partial updates only (only the lastest updated chunks need to be re-drawn)
+    zed.enableSpatialMapping(spatial_mapping_parameters); // Start the spatial mapping
     
     // Timestamp of the last fused point cloud requested
     chrono::high_resolution_clock::time_point ts_last; 
@@ -101,7 +110,7 @@ int main(int argc, char **argv) {
     // Setup runtime parameters
     RuntimeParameters runtime_parameters;
     // Use low depth confidence avoid introducing noise in the constructed model
-    runtime_parameters.confidence_threshold = 50;
+    runtime_parameters.confidence_threshold = 100;
 
     auto resolution = camera_infos.camera_configuration.resolution;
 
@@ -111,9 +120,9 @@ int main(int argc, char **argv) {
     // Create a Mat to contain the left image and its opencv ref
     Mat image_zed(display_resolution, MAT_TYPE::U8_C4);
     cv::Mat image_zed_ocv(image_zed.getHeight(), image_zed.getWidth(), CV_8UC4, image_zed.getPtr<sl::uchar1>(MEM::CPU));
-    sl::Plane plane;
-    sl::uint2 coord;
-    sl::Mesh mesh;
+    sl::Plane plane; // Berk
+    sl::uint2 coord; // Berk
+    sl::Mesh mesh; // Berk
     // Start the main loop
     while (viewer.isAvailable()) {
         // Grab a new image
@@ -145,10 +154,10 @@ int main(int argc, char **argv) {
             cv::waitKey(15);
         }
     }
-    //zed.extractWholeSpatialMap(mesh);
+    //zed.extractWholeSpatialMap(mesh); // Berk
 
     // Save generated point cloud
-    //map.save("MyFusedPointCloud");
+    map.save("MyFusedPointCloud_002", sl::MESH_FILE_FORMAT::PLY);
 
     // Free allocated memory before closing the camera
     image_zed.free();

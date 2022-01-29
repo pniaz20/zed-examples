@@ -1,6 +1,6 @@
-^C:\USERS\POUYA\DOWNLOADS\COMPRESSED\ZED_EXAMPLES_BERKSMODIFICATION\ZED-EXAMPLES-MASTER\SPATIAL MAPPING\ADVANCED POINT CLOUD MAPPING\CPP\BUILD\CMAKEFILES\FBA34D5938F2A37D26DD34811C09067A\GENERATE.STAMP.RULE
+^D:\REPO\ZED-EXAMPLES\SPATIAL MAPPING\ADVANCED POINT CLOUD MAPPING\CPP\BERK\BUILD\CMAKEFILES\E69C770E8410F4E1EE4721C39DC289A2\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp" "-BC:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp/build/ZED_Point_Cloud_Mapping.sln"
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/REPO/zed-examples/spatial mapping/advanced point cloud mapping/cpp/Berk" "-BD:/REPO/zed-examples/spatial mapping/advanced point cloud mapping/cpp/Berk/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/REPO/zed-examples/spatial mapping/advanced point cloud mapping/cpp/Berk/build/ZED_Point_Cloud_Mapping.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

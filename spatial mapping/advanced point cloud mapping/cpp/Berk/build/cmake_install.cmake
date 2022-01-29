@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp
+# Install script for directory: D:/REPO/zed-examples/spatial mapping/advanced point cloud mapping/cpp/Berk
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/pouya/Downloads/Compressed/zed_examples_berksmodification/zed-examples-master/spatial mapping/advanced point cloud mapping/cpp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/REPO/zed-examples/spatial mapping/advanced point cloud mapping/cpp/Berk/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

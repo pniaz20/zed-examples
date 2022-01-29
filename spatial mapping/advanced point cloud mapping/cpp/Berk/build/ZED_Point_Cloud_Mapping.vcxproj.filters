@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\GLViewer.cpp">
+    <ClCompile Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\GLViewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\src\main.cpp">
+    <ClCompile Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\include\GLViewer.hpp">
+    <ClInclude Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\include\GLViewer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\include\ZEDModel.hpp">
+    <ClInclude Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\include\ZEDModel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pouya\Downloads\Compressed\zed_examples_berksmodification\zed-examples-master\spatial mapping\advanced point cloud mapping\cpp\CMakeLists.txt" />
+    <CustomBuild Include="D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{CB43CBCB-7DF6-3A4C-96CD-02853F4F32EC}</UniqueIdentifier>
+      <UniqueIdentifier>{510DF6DB-ADAC-3251-AAC5-BBA00305B2EA}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{A0683355-4671-3A45-A003-C37DC4824093}</UniqueIdentifier>
+      <UniqueIdentifier>{01BC5B0D-A7B2-3927-9E53-947F0E8EAFCF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
