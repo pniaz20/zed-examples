@@ -36,7 +36,7 @@ using namespace std;
 using namespace sl;
 
 // set to 0 to create a Fused Point Cloud
-#define CREATE_MESH 1
+#define CREATE_MESH 0
 
 void parseArgs(int argc, char **argv,sl::InitParameters& param);
 
@@ -45,7 +45,12 @@ int main(int argc, char** argv) {
     // Setup configuration parameters for the ZED    
     InitParameters init_parameters;
     init_parameters.coordinate_units = UNIT::METER;
+    init_parameters.depth_mode = DEPTH_MODE::ULTRA;
     init_parameters.coordinate_system = COORDINATE_SYSTEM::RIGHT_HANDED_Y_UP; // OpenGL coordinates system
+    init_parameters.sdk_verbose = true; // Enable verbose logging
+    init_parameters.camera_fps = 30;
+    init_parameters.depth_minimum_distance = 0.1;    // unit same as coordinate_units
+    init_parameters.depth_maximum_distance = 1.0;   // unit same as coordinate_units
     parseArgs(argc,argv, init_parameters);
 
     // Open the camera
@@ -72,12 +77,29 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-    Mat image; // Current left image
+    auto camera_infos = zed.getCameraInformation();
+    auto resolution = camera_infos.camera_configuration.resolution;
+
+    // Define display resolution and check that it fit at least the image resolution
+    Resolution display_resolution(min((int)resolution.width, 720), min((int)resolution.height, 404));
+
+    Mat image(display_resolution, MAT_TYPE::U8_C4, sl::MEM::GPU); // Current left image
     Pose pose; // Camera pose tracking data
 
     SpatialMappingParameters spatial_mapping_parameters;
     POSITIONAL_TRACKING_STATE tracking_state = POSITIONAL_TRACKING_STATE::OFF;
     SPATIAL_MAPPING_STATE mapping_state = SPATIAL_MAPPING_STATE::NOT_ENABLED;
+    spatial_mapping_parameters.map_type = SpatialMappingParameters::SPATIAL_MAP_TYPE::FUSED_POINT_CLOUD;
+    spatial_mapping_parameters.set(SpatialMappingParameters::MAPPING_RANGE::SHORT);
+    spatial_mapping_parameters.set(SpatialMappingParameters::MAPPING_RESOLUTION::HIGH);
+    cout << endl;
+    cout << "min allowed range: " << spatial_mapping_parameters.allowed_range.first << endl;
+    cout << "max allowed range: " << spatial_mapping_parameters.allowed_range.second << endl;
+    cout << "min allowed resolution: " << spatial_mapping_parameters.allowed_resolution.first << endl;
+    cout << "max allowed resolution: " << spatial_mapping_parameters.allowed_resolution.second << endl;
+    spatial_mapping_parameters.resolution_meter = 0.00001; // Minimum is 1 cm
+    spatial_mapping_parameters.range_meter = 0.5; // Minimum is 2m
+
     bool mapping_activated = false; // Indicates if spatial mapping is running or not
     chrono::high_resolution_clock::time_point ts_last; // Timestamp of the last mesh request
     
@@ -120,9 +142,9 @@ int main(int argc, char** argv) {
                     zed.resetPositionalTracking(init_pose);
 
                     // Configure Spatial Mapping parameters
-					spatial_mapping_parameters.resolution_meter = SpatialMappingParameters::get(SpatialMappingParameters::MAPPING_RESOLUTION::LOW);
-                    spatial_mapping_parameters.use_chunk_only = true;
-                    spatial_mapping_parameters.save_texture = false;
+					//spatial_mapping_parameters.resolution_meter = SpatialMappingParameters::get(SpatialMappingParameters::MAPPING_RESOLUTION::HIGH);
+                    //spatial_mapping_parameters.use_chunk_only = true;
+                    //spatial_mapping_parameters.save_texture = false;
 #if CREATE_MESH
 					spatial_mapping_parameters.map_type = SpatialMappingParameters::SPATIAL_MAP_TYPE::MESH;
 #else
@@ -159,8 +181,8 @@ int main(int argc, char** argv) {
                         map.applyTexture(MESH_TEXTURE_FORMAT::RGB);
 #endif
                     // Save mesh as an OBJ file
-                    string saveName = getDir() + "mesh_gen.obj";
-                    bool error_save = map.save(saveName.c_str());
+                    string saveName = "mesh_gen_fpc_ply";
+                    bool error_save = map.save(saveName.c_str(), sl::MESH_FILE_FORMAT::PLY);
                     if(error_save)
                         print("Mesh saved under: " +saveName);
 					else

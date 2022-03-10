@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
     init_parameters.depth_mode = DEPTH_MODE::ULTRA;
     init_parameters.coordinate_system = COORDINATE_SYSTEM::RIGHT_HANDED_Y_UP; // OpenGL's coordinate system is right_handed
     init_parameters.depth_minimum_distance = 0.001;
-    init_parameters.depth_maximum_distance = 10.0;
+    init_parameters.depth_maximum_distance = 1.0;
     parseArgs(argc, argv, init_parameters);
 
     // Open the camera

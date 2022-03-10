@@ -25,10 +25,9 @@ C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6820,39): warning C4251: 's
 C:\Program Files (x86)\ZED SDK\include\sl/Camera.hpp(6820): message : see declaration of 'std::map<sl::OBJECT_CLASS,float,std::less<sl::OBJECT_CLASS>,std::allocator<std::pair<const sl::OBJECT_CLASS,float>>>'
 D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\include\ZEDModel.hpp(66,5): warning C4305: 'initializing': truncation from 'double' to 'const float'
 D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\include\ZEDModel.hpp(1201,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
-D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(49,39): warning C4553: '==': result of expression not used; did you intend '='?
-D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(53,51): warning C4305: '=': truncation from 'double' to 'float'
-D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(102,58): warning C4305: '=': truncation from 'double' to 'float'
-D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(122,119): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(181,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(187,19): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(52,39): warning C4553: '==': result of expression not used; did you intend '='?
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(108,58): warning C4305: '=': truncation from 'double' to 'float'
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(128,119): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(191,13): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\src\main.cpp(197,19): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   ZED_Point_Cloud_Mapping.vcxproj -> D:\REPO\zed-examples\spatial mapping\advanced point cloud mapping\cpp\Berk\build\Release\ZED_Point_Cloud_Mapping.exe

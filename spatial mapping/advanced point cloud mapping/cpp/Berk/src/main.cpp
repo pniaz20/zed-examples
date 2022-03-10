@@ -35,6 +35,9 @@
 using namespace std;
 using namespace sl;
 
+// Create mesh or fused point cloud
+#define CREATE_MESH true
+
 void parse_args(int argc, char **argv,InitParameters& param);
 
 void print(std::string msg_prefix, sl::ERROR_CODE err_code = sl::ERROR_CODE::SUCCESS, std::string msg_suffix = "");
@@ -51,7 +54,7 @@ int main(int argc, char **argv) {
     init_parameters.sdk_verbose = true; // Enable verbose logging
     init_parameters.coordinate_units = UNIT::MILLIMETER;
     init_parameters.depth_minimum_distance = 100;    // unit same as coordinate_units
-    init_parameters.depth_maximum_distance = 10000;  // unit same as coordinate_units
+    init_parameters.depth_maximum_distance = 1000;   // unit same as coordinate_units
     parse_args(argc, argv, init_parameters);
 
 
@@ -76,12 +79,15 @@ int main(int argc, char **argv) {
     if (errgl!=GLEW_OK)
         print("Error OpenGL: "+std::string((char*)glewGetErrorString(errgl)));
 
+    
+
+
 
     // Setup and start positional tracking
     Pose pose;
     POSITIONAL_TRACKING_STATE tracking_state = POSITIONAL_TRACKING_STATE::OK;
     PositionalTrackingParameters positional_tracking_parameters;
-    positional_tracking_parameters.enable_area_memory = false;
+    positional_tracking_parameters.enable_area_memory = true;
     returned_state = zed.enablePositionalTracking(positional_tracking_parameters);
     if (returned_state != ERROR_CODE::SUCCESS) {
         print("Enabling positional tracking failed: ", returned_state);
@@ -118,7 +124,7 @@ int main(int argc, char **argv) {
     Resolution display_resolution(min((int)resolution.width, 720), min((int)resolution.height, 404));
 
     // Create a Mat to contain the left image and its opencv ref
-    Mat image_zed(display_resolution, MAT_TYPE::U8_C4);
+    Mat image_zed(display_resolution, MAT_TYPE::U8_C4, sl::MEM::CPU);
     cv::Mat image_zed_ocv(image_zed.getHeight(), image_zed.getWidth(), CV_8UC4, image_zed.getPtr<sl::uchar1>(MEM::CPU));
     sl::Plane plane; // Berk
     sl::uint2 coord; // Berk
@@ -154,14 +160,18 @@ int main(int argc, char **argv) {
             cv::waitKey(15);
         }
     }
-    //zed.extractWholeSpatialMap(mesh); // Berk
+    zed.extractWholeSpatialMap(map); // Berk
 
     // Save generated point cloud
-    map.save("MyFusedPointCloud_002", sl::MESH_FILE_FORMAT::PLY);
+    map.save("MyFusedPointCloud_007_ply", sl::MESH_FILE_FORMAT::PLY);
 
     // Free allocated memory before closing the camera
     image_zed.free();
+    map.clear();
+
     // Close the ZED
+    zed.disableSpatialMapping();
+    zed.disablePositionalTracking();
     zed.close();
 
     return 0;
